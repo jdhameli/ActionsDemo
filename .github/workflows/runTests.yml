@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Set up MATLAB Runner
-        run: matlab-actions/setup-matlab@6ef80c9d7c52d8de4243dd05f93a01d592f8edb1
+        run: matlab-actions/setup-matlab@v1
 
       # Runs a set of commands using the runners shell
       - name: Run MATLAB Tests
