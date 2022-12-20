@@ -1,6 +1,7 @@
 classdef tCalculateAverage < matlab.unittest.TestCase
     methods (TestClassSetup)
         function displaySetupMessage(testCase)
+            version('-release')
             disp('Setting up tCalculateAverage.m')
         end
     end
