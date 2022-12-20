@@ -15,7 +15,7 @@ on:
 
 jobs:
   test-matlab:
-    name: ML tests on ${{ matrix.version }}
+    name: ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
