@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# Run MATLAB tests
 
 name: CI
 
@@ -15,7 +15,7 @@ on:
 
 jobs:
   test-matlab-r2021b:
-    name: Run MATLAB Tests on R2021b
+    name: R2021b
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -28,7 +28,7 @@ jobs:
         uses: matlab-actions/run-tests@v1.3.2
         
   test-matlab-r2022a:
-    name: Run MATLAB Tests on R2022a
+    name: R2022a
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -41,7 +41,7 @@ jobs:
         uses: matlab-actions/run-tests@v1.3.2
         
   test-matlab-r2022b:
-    name: Run MATLAB Tests on R2022b
+    name: R2022b
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
