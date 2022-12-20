@@ -36,7 +36,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [windows-latest, ubuntu-latest, macos-latest]
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -47,6 +47,11 @@ jobs:
           run_install: false
       - name: setup node
         uses: actions/setup-node@v3.5.1
+      - run: /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & echo "Started xvfb"
+        shell: bash
+        if: ${{ success() && matrix.os == 'ubuntu-latest' }}
       - run: yarn install
       - run: yarn test
+        env:
+          DISPLAY: ":99.0"
     
