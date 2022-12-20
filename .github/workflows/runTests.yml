@@ -13,19 +13,43 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test-matlab-r2021b:
+    name: Run MATLAB Tests on R2021b
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1.2.3
+        with:
+          release: R2021b
+      - name: Run tests and generate artifacts
+        uses: matlab-actions/run-tests@v1.3.2
+        
+  test-matlab-r2022a:
+    name: Run MATLAB Tests on R2022a
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1.2.3
+        with:
+          release: R2022a
+      - name: Run tests and generate artifacts
+        uses: matlab-actions/run-tests@v1.3.2
+        
+  test-matlab-r2022b:
+    name: Run MATLAB Tests on R2022b
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1.2.3
+        with:
+          release: R2022b
       - name: Run tests and generate artifacts
         uses: matlab-actions/run-tests@v1.3.2
 
